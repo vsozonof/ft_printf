@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 19:15:43 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/29 15:00:18 by vsozonof         ###   ########.fr       */
+/*   Created: 2022/11/17 19:29:37 by vsozonof          #+#    #+#             */
+/*   Updated: 2022/11/30 14:19:52 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putstr(char *s)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n >= 0 && n < 10)
-		ft_putchar_fd(n + '0', fd);
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(n * (-1), fd);
-	}
-	else
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
+	int	i;
+
+	i = -1;
+	if (s == NULL)
+		return (ft_putstr("(null)"));
+	while (s[++i])
+		ft_putchar(s[i]);
 }

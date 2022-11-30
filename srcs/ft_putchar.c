@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 19:29:37 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/29 15:00:22 by vsozonof         ###   ########.fr       */
+/*   Created: 2022/11/17 19:21:10 by vsozonof          #+#    #+#             */
+/*   Updated: 2022/11/30 13:56:11 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = -1;
-	if (!(s))
-		return ;
-	while (s[++i])
-		ft_putchar_fd(s[i], fd);
+	write(1, &c, 1);
+	g_counter++;
 }

@@ -6,11 +6,11 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:29:48 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/29 15:00:24 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/11/30 09:24:12 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/ft_printf.h"
 
 size_t	ft_strlen(const char *str)
 {

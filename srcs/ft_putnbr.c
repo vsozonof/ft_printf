@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 19:21:10 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/29 15:00:15 by vsozonof         ###   ########.fr       */
+/*   Created: 2022/11/17 19:15:43 by vsozonof          #+#    #+#             */
+/*   Updated: 2022/11/30 12:29:52 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putnbr(int n)
 {
-	write(fd, &c, 1);
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	else if (n >= 0 && n < 10)
+		ft_putchar(n + '0');
+	else if (n < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(n * (-1));
+	}
+	else
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
 }

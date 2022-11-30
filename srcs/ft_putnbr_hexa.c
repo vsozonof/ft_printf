@@ -6,25 +6,20 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 15:51:24 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/29 15:00:20 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:00:25 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../includes/ft_printf.h"
 
-void	ft_putnbr_hexa_print(long int nb, char *base, int baselen, int index)
+void	ft_putnbr_hexa_print(size_t nb, char *base, int baselen, int index)
 {
 	char		tab[32];
 
 	if (nb == 0)
 	{
-		ft_putchar_fd(base[nb % baselen], 1);
+		ft_putchar(base[nb % baselen]);
 		return ;
-	}
-	else if (nb < 0)
-	{
-		nb *= -1;
-		ft_putchar_fd('-', 1);
 	}
 	while (nb > 0)
 	{
@@ -35,24 +30,22 @@ void	ft_putnbr_hexa_print(long int nb, char *base, int baselen, int index)
 	index--;
 	while (index >= 0)
 	{
-		ft_putchar_fd(tab[index], 1);
+		ft_putchar(tab[index]);
 		index--;
 	}
 }
 
-void	ft_putnbr_hexa(int nbr, char *base)
+void	ft_putnbr_hexa(size_t nb, char *base)
 {
-	int			len;
-	long int	nb;
+	int			base_len;
 	int			index;
 
-	nb = nbr;
-	len = ft_strlen(base);
+	base_len = ft_strlen(base);
 	index = 0;
-	ft_putnbr_hexa_print(nb, base, len, index);
+	ft_putnbr_hexa_print(nb, base, base_len, index);
 }
 
-void	ft_base_checker(int nbr, char c)
+void	ft_base_checker(size_t nb, char c)
 {
 	char	*base_maj;
 	char	*base_min;
@@ -60,7 +53,7 @@ void	ft_base_checker(int nbr, char c)
 	base_maj = "0123456789ABCDEF";
 	base_min = "0123456789abcdef";
 	if (c == 'x')
-		ft_putnbr_hexa(nbr, base_min);
+		ft_putnbr_hexa(nb, base_min);
 	else
-		ft_putnbr_hexa(nbr, base_maj);
+		ft_putnbr_hexa(nb, base_maj);
 }

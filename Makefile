@@ -6,37 +6,34 @@
 #    By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 21:33:43 by vsozonof          #+#    #+#              #
-#    Updated: 2022/11/29 15:35:05 by vsozonof         ###   ########.fr        #
+#    Updated: 2022/11/30 13:52:56 by vsozonof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-GCC = gcc
-FLAGS = -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 AR = ar crs
 RM = rm -f
 NM = norminette
-HEADER = includes/header.h \
+HEADER = includes/ft_printf.h \
 
-SRCS = 	srcs/ft_putchar_fd.c \
-        srcs/ft_putstr_fd.c \
-		srcs/ft_putnbr_fd.c \
+SRCS = 	srcs/ft_putchar.c \
+        srcs/ft_putstr.c \
+		srcs/ft_putnbr.c \
 		srcs/ft_putnbr_hexa.c \
 		srcs/ft_strlen.c \
 		srcs/ft_pointer_handler.c \
 		srcs/ft_printf.c \
 		
-BONUS = 
-
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS:.c=.o)
 
-$(NAME): $(OBJS)
+%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(NAME): $(OBJS) $(HEADER)
 		$(AR) $@ $^
-
-bonus: $(BONUS_OBJS)
-		$(AR) $(NAME) $^
 
 norme: $(SRCS) $(HEADER)
 		$(NM) $@ $^
@@ -45,7 +42,7 @@ all: $(NAME)
 
 git: norme
 		git add .
-		git commit -m "fix calloc and strlcat stp moi du futur"
+		git commit -m " "
 		git push
      
 clean:
