@@ -6,7 +6,7 @@
 #    By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 21:33:43 by vsozonof          #+#    #+#              #
-#    Updated: 2022/11/30 13:52:56 by vsozonof         ###   ########.fr        #
+#    Updated: 2022/11/30 19:50:33 by vsozonof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ all: $(NAME)
 
 git: norme
 		git add .
-		git commit -m " "
+		git commit -m "project finished"
 		git push
      
 clean:

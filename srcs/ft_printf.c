@@ -6,7 +6,7 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:07:27 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/30 13:56:40 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:28:41 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_format_checker(const char *str, int i, va_list args)
 	else if (str[i + 1] == 'u')
 		ft_putnbr(va_arg(args, unsigned int));
 	else if (str[i + 1] == 'x' || str[i + 1] == 'X')
-		ft_base_checker(va_arg(args, int), str[i + 1]);
+		ft_base_checker(va_arg(args, unsigned int), str[i + 1]);
 	else if (str[i + 1] == 'p')
 		ft_pointer_converter(va_arg(args, void *));
 	else if (str[i + 1] == '%')

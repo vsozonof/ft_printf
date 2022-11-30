@@ -6,13 +6,13 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 15:51:24 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/30 13:00:25 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:50:08 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_putnbr_hexa_print(size_t nb, char *base, int baselen, int index)
+void	ft_hexa_print(unsigned long int nb, char *base, int baselen, int index)
 {
 	char		tab[32];
 
@@ -35,7 +35,7 @@ void	ft_putnbr_hexa_print(size_t nb, char *base, int baselen, int index)
 	}
 }
 
-void	ft_putnbr_hexa(size_t nb, char *base)
+void	ft_putnbr_hexa(unsigned long int nb, char *base)
 {
 	int			base_len;
 	int			index;
@@ -45,7 +45,7 @@ void	ft_putnbr_hexa(size_t nb, char *base)
 	ft_putnbr_hexa_print(nb, base, base_len, index);
 }
 
-void	ft_base_checker(size_t nb, char c)
+void	ft_base_checker(unsigned long int nb, char c)
 {
 	char	*base_maj;
 	char	*base_min;
