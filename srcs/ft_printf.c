@@ -6,13 +6,11 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:07:27 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/30 19:28:41 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:27:27 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-int	g_counter = 0;
 
 void	ft_format_checker(const char *str, int i, va_list args)
 {
@@ -39,12 +37,13 @@ void	ft_format_checker(const char *str, int i, va_list args)
 
 int	ft_printf(const char *str, ...)
 {
-	int		i;
-	va_list	args;
+	int				i;
+	va_list			args;
 
+	if (!(str))
+		return (0);
 	va_start(args, str);
 	i = 0;
-	g_counter = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -57,5 +56,5 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(args);
-	return (g_counter);
+	return (0);
 }

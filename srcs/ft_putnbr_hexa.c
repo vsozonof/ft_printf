@@ -6,25 +6,25 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 15:51:24 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/30 19:50:08 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:24:34 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_hexa_print(unsigned long int nb, char *base, int baselen, int index)
+void	ft_hexa_print(unsigned long int nb, char *base, int index)
 {
 	char		tab[32];
 
 	if (nb == 0)
 	{
-		ft_putchar(base[nb % baselen]);
+		ft_putchar(base[nb % 16]);
 		return ;
 	}
 	while (nb > 0)
 	{
-		tab[index] = base[nb % baselen];
-		nb /= baselen;
+		tab[index] = base[nb % 16];
+		nb /= 16;
 		index++;
 	}
 	index--;
@@ -37,12 +37,10 @@ void	ft_hexa_print(unsigned long int nb, char *base, int baselen, int index)
 
 void	ft_putnbr_hexa(unsigned long int nb, char *base)
 {
-	int			base_len;
 	int			index;
 
-	base_len = ft_strlen(base);
 	index = 0;
-	ft_putnbr_hexa_print(nb, base, base_len, index);
+	ft_hexa_print(nb, base, index);
 }
 
 void	ft_base_checker(unsigned long int nb, char c)

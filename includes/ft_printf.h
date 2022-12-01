@@ -6,7 +6,7 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 09:24:43 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/11/30 19:33:43 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:25:44 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <stdio.h>
 # include <limits.h>
 
-extern int	g_counter;
 int		ft_printf(const char *str, ...);
 void	ft_putstr(char *s);
 void	ft_putnbr(long int n);
