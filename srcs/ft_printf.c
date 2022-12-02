@@ -6,11 +6,12 @@
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:07:27 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/12/01 15:27:27 by vsozonof         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:02:06 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "../includes/ft_struct.h"
 
 void	ft_format_checker(const char *str, int i, va_list args)
 {
@@ -40,6 +41,7 @@ int	ft_printf(const char *str, ...)
 	int				i;
 	va_list			args;
 
+	t_var.counter = 0;
 	if (!(str))
 		return (0);
 	va_start(args, str);
@@ -56,5 +58,11 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (t_var.counter);
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	t_var.counter++;
 }

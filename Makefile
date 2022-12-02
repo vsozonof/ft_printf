@@ -6,7 +6,7 @@
 #    By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 21:33:43 by vsozonof          #+#    #+#              #
-#    Updated: 2022/11/30 19:50:33 by vsozonof         ###   ########.fr        #
+#    Updated: 2022/12/02 11:07:00 by vsozonof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ AR = ar crs
 RM = rm -f
 NM = norminette
 HEADER = includes/ft_printf.h \
+		 includes/ft_struct.h \
 
-SRCS = 	srcs/ft_putchar.c \
-        srcs/ft_putstr.c \
+SRCS = 	srcs/ft_putstr.c \
 		srcs/ft_putnbr.c \
 		srcs/ft_putnbr_hexa.c \
 		srcs/ft_strlen.c \

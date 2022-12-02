@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_struct.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsozonof <vsozonof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 19:21:10 by vsozonof          #+#    #+#             */
-/*   Updated: 2022/12/01 15:22:59 by vsozonof         ###   ########.fr       */
+/*   Created: 2022/12/02 10:57:43 by vsozonof          #+#    #+#             */
+/*   Updated: 2022/12/02 11:00:44 by vsozonof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#ifndef FT_STRUCT_H
+# define FT_STRUCT_H
 
-void	ft_putchar(char c)
+struct s_struct
 {
-	write(1, &c, 1);
-}
+	int	counter;
+} t_var;
+
+#endif
