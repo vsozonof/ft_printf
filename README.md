@@ -1,5 +1,3 @@
-# ft_printf
+# ft_printf validé
 
-Projet validé
-
-![image](https://user-images.githubusercontent.com/113908576/224155886-2a0d9aa4-9b6a-411a-b477-0c0bc462c498.png)
+[![vsozonof's 42 ft_printf Score](https://badge42.vercel.app/api/v2/clgon9kgc004908jnt6ztthtp/project/2896859)](https://github.com/JaeSeoKim/badge42)
